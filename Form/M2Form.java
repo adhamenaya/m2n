@@ -12,4 +12,5 @@ public class M2Form extends M2Base {
     public M2Form(){
         elements = new ArrayList<M2FormElement>();
     }
+
 }
