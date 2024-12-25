@@ -1,10 +1,10 @@
-package Form.ElementType;
+package Form;
 
-public interface IM2FormElementManager {
+public interface IM2FormElementEvents {
     boolean save();
     boolean load();
     boolean delete();
-    boolean update();
+    boolean update(Object value);
     boolean validate();
     void render();
     boolean isEmpty();

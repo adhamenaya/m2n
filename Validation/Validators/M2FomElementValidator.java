@@ -1,10 +1,10 @@
 package Validation.Validators;
 
-import Form.ElementType.IM2FormElementManager;
+import Form.IM2FormElementEvents;
 import Form.M2FormElement;
 import Validation.IM2ValidationChain;
 
-abstract class M2FomElementValidator implements IM2FormElementManager, IM2ValidationChain {
+abstract class M2FomElementValidator implements IM2FormElementEvents, IM2ValidationChain {
     protected M2FormElement component;
     private IM2ValidationChain next;
 
@@ -24,11 +24,6 @@ abstract class M2FomElementValidator implements IM2FormElementManager, IM2Valida
 
     @Override
     public boolean delete() {
-        return false;
-    }
-
-    @Override
-    public boolean update() {
         return false;
     }
 

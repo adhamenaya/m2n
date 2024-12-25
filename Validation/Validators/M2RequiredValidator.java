@@ -1,9 +1,6 @@
 package Validation.Validators;
 
-import Form.ElementType.IM2FormElementManager;
 import Form.M2FormElement;
-
-import javax.xml.validation.Validator;
 
 public class M2RequiredValidator extends M2FomElementValidator {
     public M2RequiredValidator(M2FormElement component) {

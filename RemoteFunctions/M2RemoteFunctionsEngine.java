@@ -5,7 +5,7 @@ public class M2RemoteFunctionsEngine {
 
     private M2RemoteFunctionsEngine() {}
 
-    public static M2RemoteFunctionsEngine getInstance(M2RemoteFunctionsEngine instance) {
+    public static M2RemoteFunctionsEngine getInstance() {
         if (instance == null) {
             instance = new M2RemoteFunctionsEngine();
         }

@@ -1,6 +1,12 @@
 package RulesEngine;
 
-public class M2RulesEngine {
+import Form.M2FormElement;
+import Observer.M2Observer;
+import Observer.M2Subject;
+
+import java.util.List;
+
+public class M2RulesEngine implements M2Observer {
     private static M2RulesEngine instance;
 
     private M2RulesEngine(){
@@ -15,4 +21,15 @@ public class M2RulesEngine {
     }
 
     // methods for managing rules
+    public void evaluateRules(List<M2FormElement> elements){
+        // logic to evaluate
+    }
+
+    @Override
+    public void update(M2Subject subject) {
+        if (subject instanceof M2FormElement) {
+            M2FormElement element = (M2FormElement) subject;
+            // Re-evaluate rules based on element's new value
+        }
+    }
 }

@@ -6,7 +6,7 @@ import Validation.M2Validation;
 
 import java.util.List;
 
-public class M2FormBuilder implements IM2FormBuilder{
+public class M2FormBuilder {
     private M2Form m2Form;
 
     public M2FormBuilder() {
