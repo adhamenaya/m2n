@@ -4,7 +4,7 @@ import Form.IM2FormElementEvents;
 import Form.M2FormElement;
 import Validation.IM2ValidationChain;
 
-abstract class M2FomElementValidator implements IM2FormElementEvents, IM2ValidationChain {
+abstract class M2FomElementValidator implements IM2ValidationChain {
     protected M2FormElement component;
     private IM2ValidationChain next;
 
@@ -12,19 +12,8 @@ abstract class M2FomElementValidator implements IM2FormElementEvents, IM2Validat
         this.component = component;
     }
 
-    @Override
-    public boolean save() {
-        return false;
-    }
-
-    @Override
-    public boolean load() {
-        return false;
-    }
-
-    @Override
-    public boolean delete() {
-        return false;
+    private boolean isValid(){
+        return component.isValid();
     }
 
     @Override
@@ -35,16 +24,6 @@ abstract class M2FomElementValidator implements IM2FormElementEvents, IM2Validat
             }
             return true;
         }
-        return false;
-    }
-
-    @Override
-    public void render() {
-
-    }
-
-    @Override
-    public boolean isEmpty() {
         return false;
     }
 

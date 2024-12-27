@@ -11,8 +11,4 @@ public class M2RequiredValidator extends M2FomElementValidator {
         return super.validate() && !component.isEmpty();
     }
 
-    @Override
-    public boolean isValid() {
-        return !component.isEmpty();
-    }
 }

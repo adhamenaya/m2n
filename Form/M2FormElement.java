@@ -3,24 +3,30 @@ package Form;
 import Attributes.M2Attributes;
 import Base.M2Base;
 import Base.M2Main;
-import Observer.M2Observer;
+import Observer.IM2Observable;
+import Observer.IM2Observer;
 import Observer.M2ObserversEngine;
-import Observer.M2Subject;
+import RemoteFunctions.M2EmailFunction;
+import RemoteFunctions.M2LoggerFunction;
 
 import java.util.List;
 
-public abstract class M2FormElement extends M2Base implements IM2FormElementEvents, M2Subject {
+public abstract class M2FormElement extends M2Base implements IM2FormElementEvents, IM2Observable {
 
     private List<M2FormElement> childrenElements;
     private List<M2Attributes> attributes;
     protected M2Main main;
 
-    private List<M2Observer> observers = M2ObserversEngine.getObservers();
+    private List<IM2Observer> observers = M2ObserversEngine.getObservers();
 
-    public M2FormElement(){}
+    public M2FormElement() {
+        this.attach(this, new M2EmailFunction());
+        this.attach(this, new M2LoggerFunction());
+    }
 
     @Override
     public boolean save() {
+        notifyObservers(this,"Element saved");
         return false;
     }
 
@@ -72,22 +78,22 @@ public abstract class M2FormElement extends M2Base implements IM2FormElementEven
         return false;
     }
 
-    protected void setMediator(M2Main main) {
+    protected void setMain(M2Main main) {
         this.main = main;
     }
 
     @Override
-    public void attach(M2Observer observer) {
-
+    public void attach(M2Base m2Base, IM2Observer observer) {
+        main.observersEngine.addObserver(m2Base, observer);
     }
 
     @Override
-    public void detach(M2Observer observer) {
-
+    public void detach(M2Base m2Base, IM2Observer observer) {
+        main.observersEngine.removeObserver(m2Base, observer);
     }
 
     @Override
-    public void notifyObservers() {
-
+    public void notifyObservers(M2Base m2Base, String message) {
+        main.observersEngine.notifyObservers(m2Base, message);
     }
 }

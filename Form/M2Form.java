@@ -1,6 +1,7 @@
 package Form;
 import Attributes.M2Attributes;
 import Base.M2Base;
+import Base.M2Main;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.List;
 public class M2Form extends M2Base {
     private List<M2FormElement> elements;
     private M2Attributes attributes;
+    private M2Main main;
 
     private IM2FormElementViewMode mode;
 
@@ -17,6 +19,13 @@ public class M2Form extends M2Base {
 
     public List<M2FormElement> getElements() {
         return elements;
+    }
+
+    public void setMain(M2Main main) {
+        this.main = main;
+        for (M2FormElement element : elements) {
+            element.setMain(main);
+        }
     }
 
     public void setMode(IM2FormElementViewMode mode) {
