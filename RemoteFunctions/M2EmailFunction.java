@@ -1,7 +1,6 @@
 package RemoteFunctions;
 
 import Observer.IM2Observer;
-import Observer.M2Subject;
 
 public class M2EmailFunction implements IM2RemoteFunction, IM2Observer {
     private String to;

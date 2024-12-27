@@ -2,20 +2,19 @@ package RulesEngine;
 
 import Form.M2FormElement;
 import Observer.IM2Observer;
-import Observer.M2Subject;
 
 import java.util.List;
 
-public class M2RulesEngine implements IM2Observer {
-    private static M2RulesEngine instance;
+public class M2RulesManager implements IM2Observer {
+    private static M2RulesManager instance;
 
-    private M2RulesEngine(){
+    private M2RulesManager(){
         // private constructor
     }
 
-    public static M2RulesEngine getInstance(){
+    public static M2RulesManager getInstance(){
         if(instance == null){
-            instance = new M2RulesEngine();
+            instance = new M2RulesManager();
         }
         return instance;
     }

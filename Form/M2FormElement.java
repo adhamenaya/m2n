@@ -5,7 +5,7 @@ import Base.M2Base;
 import Base.M2Main;
 import Observer.IM2Observable;
 import Observer.IM2Observer;
-import Observer.M2ObserversEngine;
+import Observer.M2ObserversManager;
 import RemoteFunctions.M2EmailFunction;
 import RemoteFunctions.M2LoggerFunction;
 
@@ -17,7 +17,7 @@ public abstract class M2FormElement extends M2Base implements IM2FormElementEven
     private List<M2Attributes> attributes;
     protected M2Main main;
 
-    private List<IM2Observer> observers = M2ObserversEngine.getObservers();
+    private List<IM2Observer> observers = M2ObserversManager.getObservers();
 
     public M2FormElement() {
         this.attach(this, new M2EmailFunction());
@@ -84,16 +84,16 @@ public abstract class M2FormElement extends M2Base implements IM2FormElementEven
 
     @Override
     public void attach(M2Base m2Base, IM2Observer observer) {
-        main.observersEngine.addObserver(m2Base, observer);
+        main.m2ObserversManager.addObserver(m2Base, observer);
     }
 
     @Override
     public void detach(M2Base m2Base, IM2Observer observer) {
-        main.observersEngine.removeObserver(m2Base, observer);
+        main.m2ObserversManager.removeObserver(m2Base, observer);
     }
 
     @Override
     public void notifyObservers(M2Base m2Base, String message) {
-        main.observersEngine.notifyObservers(m2Base, message);
+        main.m2ObserversManager.notifyObservers(m2Base, message);
     }
 }
