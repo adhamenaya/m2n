@@ -1,15 +1,24 @@
 package Form.ElementType;
 
+import Base.M2Base;
+import ErrorHandling.Exceptions.InvalidM2ObjectException;
 import Form.M2FormElement;
+import Prototype.IM2Prototype;
 
 public class M2Textbox extends M2FormElement {
 
     @Override
-    public boolean update(Object value){
-        String text = (String) value;
-        if(super.main != null){
-            super.main.notify(this, "valueChanged");
-        }
-        return false;
+    protected void renderElement() {
+
+    }
+
+    @Override
+    public M2Base getInstance() throws InvalidM2ObjectException {
+        return null;
+    }
+
+    @Override
+    public IM2Prototype clone() {
+        return null;
     }
 }

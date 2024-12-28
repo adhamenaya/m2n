@@ -58,7 +58,9 @@ public abstract class M2FormElement extends M2Base implements IM2FormElementEven
         renderValidationMessages();
     }
 
-    protected abstract String getLabel();
+    protected String getLabel(){
+        return "";
+    }
     protected abstract void renderElement();
 
     protected void renderLabel(){

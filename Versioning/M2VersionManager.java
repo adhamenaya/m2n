@@ -24,4 +24,12 @@ public class M2VersionManager{
         }
         return null;
     }
+    public M2Version getVersion(M2Base base) {
+        if (m2BaseVersionsMap != null) {
+            if (m2BaseVersionsMap.containsKey(base)) {
+                return m2BaseVersionsMap.get(base).get(0);
+            }
+        }
+        return null;
+    }
 }

@@ -1,6 +1,8 @@
 package Attributes;
 
 import Base.M2Base;
+import ErrorHandling.Exceptions.InvalidM2ObjectException;
+import Prototype.IM2Prototype;
 
 public class M2Attributes extends M2Base {
     private String key;
@@ -20,5 +22,15 @@ public class M2Attributes extends M2Base {
 
     public void setKey(String key) {
         this.key = key;
+    }
+
+    @Override
+    public M2Base getInstance() throws InvalidM2ObjectException {
+        return null;
+    }
+
+    @Override
+    public IM2Prototype clone() {
+        return null;
     }
 }

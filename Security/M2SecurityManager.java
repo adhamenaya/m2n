@@ -30,4 +30,8 @@ public class M2SecurityManager {
         }
         return null;
     }
+
+    public static M2User getCurrentUser() {
+        return new M2User();
+    }
 }

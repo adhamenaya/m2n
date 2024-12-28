@@ -2,6 +2,8 @@ package Form;
 import Attributes.M2Attributes;
 import Base.M2Base;
 import Base.M2Main;
+import ErrorHandling.Exceptions.InvalidM2ObjectException;
+import Prototype.IM2Prototype;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,16 @@ public class M2Form extends M2Base {
 
     public M2Form(){
         elements = new ArrayList<M2FormElement>();
+    }
+
+    @Override
+    public M2Base getInstance() throws InvalidM2ObjectException {
+        return null;
+    }
+
+    @Override
+    public IM2Prototype clone() {
+        return null;
     }
 
     public List<M2FormElement> getElements() {

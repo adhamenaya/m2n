@@ -2,7 +2,26 @@ package RulesEngine;
 
 import Base.M2Base;
 import DataSource.IM2ExternalDataSourceManager;
+import ErrorHandling.Exceptions.InvalidM2ObjectException;
+import Prototype.IM2Prototype;
 
 public class M2ExternalRuleAction extends M2Base implements IM2ExternalDataSourceManager {
     public M2ExternalRuleAction() {}
+
+    /**
+     * @return
+     * @throws InvalidM2ObjectException
+     */
+    @Override
+    public M2Base getInstance() throws InvalidM2ObjectException {
+        return null;
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public IM2Prototype clone() {
+        return null;
+    }
 }
