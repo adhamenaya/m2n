@@ -1,6 +1,6 @@
 package DataSource;
 
-public class M2LegacyFormDataSourceFactory implements M2DataSourceFactory{
+public class M2LegacyFormDataSourceFactory implements M2DataSourceFactory {
 
     @Override
     public M2DataSource createM2DataSource() {

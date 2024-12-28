@@ -6,9 +6,12 @@ import Prototype.IM2Prototype;
 
 public class M2Phase extends M2Base {
 
+    private M2Status status;
+    private boolean active;
+
     @Override
     public M2Base getInstance() throws InvalidM2ObjectException {
-        if(isValid())
+        if (isValid())
             return this;
         else throw new InvalidM2ObjectException();
     }
@@ -29,7 +32,4 @@ public class M2Phase extends M2Base {
     public void setActive(boolean active) {
         this.active = active;
     }
-
-    private M2Status status;
-    private boolean active;
 }

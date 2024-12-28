@@ -1,4 +1,5 @@
 package Locale;
+
 import Base.M2Base;
 import ErrorHandling.Exceptions.InvalidM2ObjectException;
 import Prototype.IM2Prototype;

@@ -8,7 +8,7 @@ public class M2FormSubmittedPhase implements IM2LifecycleHandler {
     public void handle(M2Base form, IM2LifecycleHandler nextPhase) {
         // ...logic to handle in progress form
 
-        if(nextPhase != null) {
+        if (nextPhase != null) {
             nextPhase.handle(form, nextPhase);
         }
     }

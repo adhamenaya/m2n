@@ -1,4 +1,5 @@
 package Form;
+
 import Attributes.M2Attributes;
 import Base.M2Base;
 import Base.M2Main;
@@ -15,7 +16,7 @@ public class M2Form extends M2Base {
 
     private IM2FormElementViewMode mode;
 
-    public M2Form(){
+    public M2Form() {
         elements = new ArrayList<M2FormElement>();
     }
 

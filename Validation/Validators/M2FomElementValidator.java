@@ -1,6 +1,5 @@
 package Validation.Validators;
 
-import Form.IM2FormElementEvents;
 import Form.M2FormElement;
 import Validation.IM2ValidationChain;
 
@@ -12,14 +11,14 @@ abstract class M2FomElementValidator implements IM2ValidationChain {
         this.component = component;
     }
 
-    private boolean isValid(){
+    private boolean isValid() {
         return component.isValid();
     }
 
     @Override
     public boolean validate() {
-        if(this.isValid()){
-            if(next!=null){
+        if (this.isValid()) {
+            if (next != null) {
                 return next.validate();
             }
             return true;

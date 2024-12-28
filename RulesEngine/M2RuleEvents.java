@@ -8,7 +8,9 @@ import java.util.List;
 
 public class M2RuleEvents extends M2Base implements IM2RulesEngineManager {
     private List<M2Rule> rules;
-    public M2RuleEvents() {}
+
+    public M2RuleEvents() {
+    }
 
     /**
      * @return

@@ -1,9 +1,8 @@
 package RulesEngine.Expressions;
 
-import java.beans.Expression;
 import java.util.Map;
 
-public class M2VariableExpression implements IM2Expression{
+public class M2VariableExpression implements IM2Expression {
     private String variableName;
 
     public M2VariableExpression(String variableName) {

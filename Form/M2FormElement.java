@@ -13,10 +13,9 @@ import java.util.List;
 
 public abstract class M2FormElement extends M2Base implements IM2FormElementEvents, IM2Observable {
 
+    protected M2Main main;
     private List<M2FormElement> childrenElements;
     private List<M2Attributes> attributes;
-    protected M2Main main;
-
     private List<IM2Observer> observers = M2ObserversManager.getObservers();
 
     public M2FormElement() {
@@ -26,7 +25,7 @@ public abstract class M2FormElement extends M2Base implements IM2FormElementEven
 
     @Override
     public boolean save() {
-        notifyObservers(this,"Element saved");
+        notifyObservers(this, "Element saved");
         return false;
     }
 
@@ -58,18 +57,23 @@ public abstract class M2FormElement extends M2Base implements IM2FormElementEven
         renderValidationMessages();
     }
 
-    protected String getLabel(){
+    protected String getLabel() {
         return "";
     }
+
     protected abstract void renderElement();
 
-    protected void renderLabel(){
+    protected void renderLabel() {
         System.out.println(getLabel());
     }
-    protected void renderChildren(){}
+
+    protected void renderChildren() {
+    }
+
     protected void renderValidationMessages() {
         // ... render any validation messages
     }
+
     @Override
     public boolean isEmpty() {
         return false;

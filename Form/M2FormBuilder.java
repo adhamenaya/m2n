@@ -18,17 +18,17 @@ public class M2FormBuilder {
         return this;
     }
 
-    public M2FormBuilder setRules(List<M2Rule> rules){
+    public M2FormBuilder setRules(List<M2Rule> rules) {
         // logic to set rules
         return this;
     }
 
-    public M2FormBuilder setValidations(List<M2Validation> validations){
+    public M2FormBuilder setValidations(List<M2Validation> validations) {
         // logic to set validations
         return this;
     }
 
-    public M2Form build(){
+    public M2Form build() {
         return m2Form;
     }
 }

@@ -1,7 +1,5 @@
 package Lifecycle;
 
-import Base.M2Base;
-
 public class M2Status {
     // Shared statuses
 

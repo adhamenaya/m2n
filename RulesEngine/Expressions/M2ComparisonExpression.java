@@ -1,7 +1,5 @@
 package RulesEngine.Expressions;
 
-import jdk.incubator.vector.VectorOperators;
-
 import java.util.Map;
 
 public class M2ComparisonExpression implements IM2Expression {

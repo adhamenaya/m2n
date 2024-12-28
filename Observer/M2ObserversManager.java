@@ -12,7 +12,8 @@ public class M2ObserversManager {
     private static M2ObserversManager instance;
     private static Map<M2Base, List<IM2Observer>> m2BaseObserversMap;
 
-    private M2ObserversManager(){}
+    private M2ObserversManager() {
+    }
 
     public static M2ObserversManager getInstance() {
         if (instance == null) {
@@ -29,8 +30,9 @@ public class M2ObserversManager {
         }
         return observers;
     }
+
     public static List<IM2Observer> getObservers(M2Base m2Base) {
-        if (m2BaseObserversMap != null){
+        if (m2BaseObserversMap != null) {
             if (m2BaseObserversMap.containsKey(m2Base)) {
                 return m2BaseObserversMap.get(m2Base);
             }
@@ -41,10 +43,12 @@ public class M2ObserversManager {
     public void addObserver(M2Base m2Base, IM2Observer observer) {
         this.m2BaseObserversMap.get(m2Base).add(observer);
     }
+
     public void removeObserver(M2Base m2Base, IM2Observer observer) {
         this.m2BaseObserversMap.get(m2Base).remove(observer);
     }
-    public void notifyObservers(M2Base m2Base, String message){
+
+    public void notifyObservers(M2Base m2Base, String message) {
         for (IM2Observer observer : m2BaseObserversMap.get(m2Base)) {
             observer.update(message);
         }

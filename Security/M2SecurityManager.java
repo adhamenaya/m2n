@@ -10,7 +10,8 @@ public class M2SecurityManager {
     private static List<M2Role> m2Roles;
     private static Map<M2Base, List<M2Role>> m2BaseRolesMap;
 
-    private M2SecurityManager(){}
+    private M2SecurityManager() {
+    }
 
     public static M2SecurityManager getInstance() {
         if (instance == null) {
@@ -22,9 +23,10 @@ public class M2SecurityManager {
     public static List<M2Role> getRoles() {
         return m2Roles;
     }
+
     public static List<M2Role> getRoles(M2Base base) {
-        if(m2BaseRolesMap != null) {
-            if(m2BaseRolesMap.containsKey(base)) {
+        if (m2BaseRolesMap != null) {
+            if (m2BaseRolesMap.containsKey(base)) {
                 return m2BaseRolesMap.get(base);
             }
         }

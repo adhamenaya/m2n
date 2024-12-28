@@ -5,7 +5,8 @@ import ErrorHandling.Exceptions.InvalidM2ObjectException;
 import Prototype.IM2Prototype;
 
 public class M2Condition extends M2Base {
-    public M2Condition() {}
+    public M2Condition() {
+    }
 
     /**
      * @return

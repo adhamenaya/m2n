@@ -6,7 +6,8 @@ import ErrorHandling.Exceptions.InvalidM2ObjectException;
 import Prototype.IM2Prototype;
 
 public class M2ExternalRuleAction extends M2Base implements IM2ExternalDataSourceManager {
-    public M2ExternalRuleAction() {}
+    public M2ExternalRuleAction() {
+    }
 
     /**
      * @return

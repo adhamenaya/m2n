@@ -5,7 +5,8 @@ import ErrorHandling.Exceptions.InvalidM2ObjectException;
 import Prototype.IM2Prototype;
 
 public class M2Rule extends M2Base {
-    public M2Rule() {}
+    public M2Rule() {
+    }
 
     /**
      * @return
