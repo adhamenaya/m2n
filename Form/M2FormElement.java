@@ -2,21 +2,31 @@ package Form;
 
 import Attributes.M2Attributes;
 import Base.M2Base;
+import Base.M2LegacyName;
 import Base.M2Main;
+import Logging.M2Log;
 import Observer.IM2Observable;
 import Observer.IM2Observer;
 import Observer.M2ObserversManager;
 import RemoteFunctions.M2EmailFunction;
 import RemoteFunctions.M2LoggerFunction;
+import Versioning.M2Version;
 
 import java.util.List;
 
+@M2LegacyName(ids = {"InstrumentAttribute"})
 public abstract class M2FormElement extends M2Base implements IM2FormElementEvents, IM2Observable {
 
+    @M2LegacyName(ids = {"InstrumentAttribute.SequenceNumber"})
+    protected M2Version version;
     protected M2Main main;
     private List<M2FormElement> childrenElements;
+    @M2LegacyName(ids = {"InstrumentAttribute.AttributeMetadata"})
     private List<M2Attributes> attributes;
     private List<IM2Observer> observers = M2ObserversManager.getObservers();
+
+    @M2LegacyName(ids = {"InstrumentAttributeChange"})
+    protected List<M2Log> changes;
 
     public M2FormElement() {
         this.attach(this, new M2EmailFunction());
@@ -25,7 +35,7 @@ public abstract class M2FormElement extends M2Base implements IM2FormElementEven
 
     @Override
     public boolean save() {
-        notifyObservers(this, "Element saved");
+        notifyObservers(this, "Element saved", , );
         return false;
     }
 
@@ -99,7 +109,7 @@ public abstract class M2FormElement extends M2Base implements IM2FormElementEven
     }
 
     @Override
-    public void notifyObservers(M2Base m2Base, String message) {
+    public void notifyObservers(M2Base m2Base, String message, int importance, boolean isCritical) {
         main.m2ObserversManager.notifyObservers(m2Base, message);
     }
 }
